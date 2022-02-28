@@ -1,0 +1,17 @@
+h1, p {
+    text-align: center;
+}
+
+ul, ol {
+    list-style: none;
+}
+ol:hover {
+transition: 20s;
+background-color: red;
+}
+
+ol:active {
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
