@@ -1,0 +1,34 @@
+div:hover {
+  border: 5px solid black;
+}
+
+.corprimaria {
+  background-color: red;
+  font-size: 120px;
+}
+
+.corsecundaria {
+  background-color: green;
+  font-size: 100px;
+  
+}
+
+.corcomplementar {
+  padding: 100px;
+  background-color: blue;
+  font-size: 80px;
+}
+
+.corescura {
+  background-color: brown;
+  font-size: 60px;
+}
+
+.corclara {
+  background-color: pink;
+  font-size: 40px;
+}
+
+div:nth-child(odd) {
+ text-decoration: line-through;
+}
