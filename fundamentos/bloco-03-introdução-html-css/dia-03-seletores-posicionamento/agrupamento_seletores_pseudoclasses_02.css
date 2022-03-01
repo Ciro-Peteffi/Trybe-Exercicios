@@ -2,32 +2,37 @@ div:hover {
   border: 5px solid black;
 }
 
-.corprimaria {
+div:nth-of-type(1) {
   background-color: red;
-  font-size: 120px;
+  font-size: 15px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.corsecundaria {
-  background-color: green;
-  font-size: 100px;
-  
-}
-
-.corcomplementar {
-  padding: 100px;
+div:nth-of-type(2) {
   background-color: blue;
-  font-size: 80px;
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.corescura {
-  background-color: brown;
-  font-size: 60px;
+div:nth-of-type(3) {
+  background-color: blueviolet;
+  padding: 100px;
+  font-size: 50px;
 }
 
-.corclara {
-  background-color: pink;
-  font-size: 40px;
+div:nth-of-type(4) {
+  background-color: greenyellow;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: oblique;
 }
+
+div:nth-of-type(5) {
+  background-color: gray;
+  font-size: 35px;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 100px;
+}
+
 
 div:nth-child(odd) {
  text-decoration: line-through;
