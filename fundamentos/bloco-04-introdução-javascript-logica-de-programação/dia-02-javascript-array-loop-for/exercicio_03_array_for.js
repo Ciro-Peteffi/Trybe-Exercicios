@@ -9,5 +9,5 @@ for (let i = 0; i < numbers.length; i += 1) {
     soma = soma + numbers[i];
 }
 
-console.log('A média aritmética do array é: ' + soma/numbers.length)
+console.log('A média aritmética do array é: ' + soma/numbers.length);
 
