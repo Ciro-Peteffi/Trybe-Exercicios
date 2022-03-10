@@ -18,4 +18,4 @@ for (let i = 1; i <= contador; i++) {
 //     resultado *= i;
 // }
 
-console.log(resultado);
+console.log(resultado);g
