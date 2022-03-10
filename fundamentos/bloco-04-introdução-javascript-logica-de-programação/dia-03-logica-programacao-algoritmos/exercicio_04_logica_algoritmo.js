@@ -17,15 +17,17 @@
 // console.log(biggestPrimeNumber);
 
 let maiorPrimo = 0;
+let contaPrimo = 0;
 
-for (let numero = 0; numero < 50; numero += 1) {
-    
-    for (let divisor = 0; divisor < numero; divisor +=1) {
-        if (numero % divisor === !0 && numero % numero === 0 && numero % 1 ===0) {
-            
-            maiorPrimo = numero;
-        }
+for (let i = 0; i < 50; i += 1) {
+  for (let divisor = 1; divisor < i; divisor += 1) {
+    if (i % divisor === 0) {
+      contaPrimo += 1;
     }
+    if (contaPrimo < 2) {
+        maiorPrimo = i;
+    }
+  }
 }
 
 console.log(maiorPrimo);
