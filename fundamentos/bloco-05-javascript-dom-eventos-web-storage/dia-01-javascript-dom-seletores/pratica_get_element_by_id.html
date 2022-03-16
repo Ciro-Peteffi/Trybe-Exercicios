@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="second-paragraph">Segundo parágrafo!</p>
+    </header>
+    <script>
+      const paragraph = document.getElementById("paragraph");
+      paragraph.style.color = "red";
+
+      const title = document.getElementById("page-title");
+      title.style.color = "blue";
+      title.style.fontSize = "60px";
+      title.innerText = "Avengers";
+      title.style.backgroundColor = "red";
+
+      const secondParagraph = document.getElementById("second-paragraph");
+      secondParagraph.style.color = "yellow";
+      secondParagraph.style.backgroundColor = "black";
+      secondParagraph.style.fontSize = "80px";
+
+      const subtitle = document.getElementById("subtitle");
+      subtitle.innerText = "Qual o avenger mais forte?";
+      subtitle.style.color = "blue";
+      subtitle.style.fontSize = "60px";
+      subtitle.style.backgroundColor = "green";
+    </script>
+  </body>
+</html>
