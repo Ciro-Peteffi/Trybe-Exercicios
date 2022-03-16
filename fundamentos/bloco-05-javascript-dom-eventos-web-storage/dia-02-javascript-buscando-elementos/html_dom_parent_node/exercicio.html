@@ -113,8 +113,45 @@
     // 9. Adicione 3 tags `h3`, todas sendo filhas do `main` criado no passo 2.
     for (let index = 0; index < 3; index += 1){
     const elementH3 = document.createElement('h3')
+    elementH3.innerText = 'Show ' + index;
     elementMain.appendChild(elementH3);
     }
+
+    // Segunda Parte
+
+    // 1.Adicione a classe title na tag h1 criada;
+    elementH1.classList = 'title';
+
+    // // 2.Adicione a classe description nas 3 tags h3 criadas;
+    const elementH3 = document.getElementsByTagName('h3');
+    console.log(elementH3);
+    for(keys in elementH3) {
+      elementH3[keys].className = 'description';
+    }
+
+    // 3. Remova a `section` criado no passo 5 (aquele que possui a classe `left-content`). Utilize a função `.removeChild()`;
+    elementMain.removeChild(elementSection1);
+    console.log(elementMain);
+
+    // 4. Centralize a `section` criado no passo 6 (aquele que possui a classe `right-content`). Dica: para centralizar, basta configurar o `margin-right: auto` da `section`;
+    const elementSection2Center = document.getElementsByClassName('right-content');
+    console.log(elementSection2Center);
+    elementSection2Center[0].style.marginRight = 'auto';
+
+    // 5. Troque a cor de fundo do elemento pai da `section` criada no passo 3 (aquela que possui a classe `center-content`) para a cor verde;
+
+    const elementSectionGreen = document.querySelectorAll('section');
+    console.log(elementSectionGreen);
+    elementSectionGreen[0].style.background = 'green';
+
+    // 6.Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8.
+
+    const liRemoveLastTwo = document.querySelector('ul');
+    console.log(liRemoveLastTwo);
+    liRemoveLastTwo.removeChild(liRemoveLastTwo.lastElementChild);
+    liRemoveLastTwo.removeChild(liRemoveLastTwo.lastElementChild);
+    console.log(liRemoveLastTwo);
+    
     </script>
   </body>
 </html>
