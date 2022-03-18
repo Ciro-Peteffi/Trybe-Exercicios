@@ -72,7 +72,6 @@ function createButton(feridados) {
     document.getElementsByClassName("buttons-container")[0];
   elementDivButton.appendChild(button);
   button.id = "buttons-container";
-  console.log(elementDivButton);
 }
 createButton();
 
@@ -121,8 +120,6 @@ function trocaTexto(array) {
    
     } else {
       elementLiFriday[keys].innerHTML = array[keys];
-      console.log(array[keys]);
-
     }
    }
   }
@@ -151,7 +148,6 @@ function btnFriday (string) {
 
   function dayZoom () {
     const zoomOut = document.getElementsByTagName('li');
-    console.log (zoomOut);
     for (let index3 = 9; index3 < zoomOut.length; index3 +=1) {
       zoomOut[index3].addEventListener('mouseover', textoAumenta);
       zoomOut[index3].addEventListener('mouseout', textoDiminui);
@@ -159,7 +155,19 @@ function btnFriday (string) {
   }
   dayZoom();
 
+// 7 - Implemente uma função que adiciona uma tarefa personalizada ao calendário. A função deve receber como parâmetro a string com o nome da tarefa (ex:   "cozinhar") e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
+// O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks" .
 
+let task = 'Estudar, Trabalhar, Academia'
+
+function tarefaPersonalizada(task) {
+let elementSpanTarefa = document.createElement('span');
+let elementDivMyTasks = document.getElementsByClassName('my-tasks');
+elementDivMyTasks[0].appendChild(elementSpanTarefa);
+let getSpanTask = document.getElementsByTagName('span');
+getSpanTask[0].innerText = task;
+}
+tarefaPersonalizada(task);
 
   
 
