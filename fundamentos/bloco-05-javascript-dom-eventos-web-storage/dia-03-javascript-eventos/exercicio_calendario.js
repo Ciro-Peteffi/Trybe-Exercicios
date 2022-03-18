@@ -28,52 +28,93 @@ createDaysOfTheWeek();
 
 // const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
-function criarDiasMes (){
+function criarDiasMes() {
+  const dezDaysList = [
+    29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+    20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
+  ];
 
-const dezDaysList = [
-  29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
-];
+  let feriado = [24, 25, 31];
+  let sextaFeira = [4, 11, 18, 25];
 
-let feriado = [24, 25, 31];
-let sextaFeira = [4, 11, 18, 25];
+  const elementUlDays = document.getElementById("days");
 
-const elementUlDays = document.getElementById("days");
+  for (index = 0; index < dezDaysList.length; index += 1) {
+    const elementLiDays = document.createElement("li");
+    elementLiDays.classList = "day";
+    elementUlDays.appendChild(elementLiDays);
+    elementLiDays.innerText = dezDaysList[index];
 
-for (index = 0; index < dezDaysList.length; index += 1) {
-  const elementLiDays = document.createElement("li");
-  elementLiDays.classList = "day";
-  elementUlDays.appendChild(elementLiDays);
-  elementLiDays.innerText = dezDaysList[index];
+    for (let index1 = 0; index1 < feriado.length; index1 += 1) {
+      if (dezDaysList[index] === feriado[index1]) {
+        elementLiDays.classList.add("holiday");
+      }
+    }
 
-  for (let index1 = 0; index1 < feriado.length; index1 += 1) {
-    if (dezDaysList[index] === feriado[index1]) {
-      elementLiDays.classList.add("holiday");
+    for (let index2 = 0; index2 < dezDaysList.length; index2 += 1) {
+      if (dezDaysList[index] === sextaFeira[index2]) {
+        elementLiDays.classList.add("friday");
+      }
     }
   }
-
-  for (let index2 = 0; index2 < dezDaysList.length; index2 += 1) {
-    if (dezDaysList[index] === sextaFeira[index2]) {
-      elementLiDays.classList.add("friday");
-    }
-  }
-}
 }
 criarDiasMes();
-
 
 // 2 - Implemente uma função que receba como parâmetro a string "Feriados" e crie dinamicamente um botão com o nome "Feriados".
 // Adicione a este botão a ID "btn-holiday" .
 // Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
 
-const feriados = 'Feriados';
-
 function createButton(feridados) {
-  const button = document.createElement('button');
+  const feriados = "Feriados";
+  const button = document.createElement("button");
   button.innerHTML = feriados;
-  const elementDivButton = document.getElementsByClassName('buttons-container')[0];
-  elementDivButton.appendChild(button);  
-  button.id = 'buttons-container';
+  const elementDivButton =
+    document.getElementsByClassName("buttons-container")[0];
+  elementDivButton.appendChild(button);
+  button.id = "buttons-container";
   console.log(elementDivButton);
 }
 createButton();
+
+// 3 - Implemente uma função que adicione ao botão "Feriados" um evento de "click" que muda a cor de fundo dos dias que possuem a classe "holiday" .
+// É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial com a cor "rgb(238,238,238)"
+
+
+
+function mudarCor(corPadrao, novaCor) {
+
+  let alteraCorFeriado = document.getElementsByClassName("holiday");
+
+  for (elementos of alteraCorFeriado) {
+    if (elementos.style.backgroundColor === 'white') {
+      elementos.style.background = 'black';
+    } else {
+      elementos.style.backgroundColor = 'white';
+    }
+  }
+}
+
+function clickAlteraCor() {
+  
+  let button = document.getElementById("buttons-container");
+  button.addEventListener("click", mudarCor);
+}
+clickAlteraCor();
+
+// 4 - Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
+// Adicione a este botão o ID "btn-friday" .
+// Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
+
+let string = 'Sexta-Feira';
+
+function btnFriday (string) {
+  const elementDivBtnCont = document.getElementsByClassName('buttons-container');
+  const button = document.createElement('button');
+  button.innerText = string;
+  button.id = 'btn-friday';
+  elementDivBtnCont[0].appendChild(button);
+  }
+
+  btnFriday(string)
+
+ 
