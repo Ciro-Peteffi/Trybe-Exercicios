@@ -105,16 +105,40 @@ clickAlteraCor();
 // Adicione a este botão o ID "btn-friday" .
 // Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
 
-let string = 'Sexta-Feira';
+// 5 - Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click" que modifica o texto exibido nos dias que são Sexta-feira.
+// É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial exibindo os dias.
 
+let string = 'Sexta-Feira';
+let array = [4, 11, 18, 25];
+
+function trocaTexto(array) {
+  
+  buttonText = document.getElementById('btn-friday');
+  elementLiFriday = document.getElementsByClassName('friday');
+  for(keys in elementLiFriday) {
+    if (elementLiFriday[keys].innerHTML !== 'Sextou!'){
+      elementLiFriday[keys].innerHTML = 'Sextou!';
+   
+    } else {
+      elementLiFriday[keys].innerHTML = array[keys];
+      console.log(array[keys]);
+
+    }
+   }
+  }
+  
 function btnFriday (string) {
+  
   const elementDivBtnCont = document.getElementsByClassName('buttons-container');
   const button = document.createElement('button');
   button.innerText = string;
   button.id = 'btn-friday';
   elementDivBtnCont[0].appendChild(button);
+  button.addEventListener('click', function() {trocaTexto(array)});
   }
-
-  btnFriday(string)
-
  
+  btnFriday(string);
+
+  
+
+
