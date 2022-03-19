@@ -3,6 +3,13 @@
     margin: 0;
   }
   
+  
+  .task-selected {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px;
+  }
+
   body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #eee;
@@ -80,7 +87,6 @@
   .my-tasks div {
     border: 1px solid black;
     border-radius: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: inline-block;
     height: 35px;
     margin-left: 10px;
@@ -157,6 +163,7 @@
   .holiday {
     background-color: rgb(238,238,238);
   }
+
 
  
   

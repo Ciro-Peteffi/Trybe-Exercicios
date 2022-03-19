@@ -184,6 +184,30 @@ function corTarefa(color){
 }
 corTarefa(color);
 
+// 9 - Implemente uma função que adiciona um evento que ao clicar no elemento com a tag <div> referente a cor da sua tarefa, atribua a este elemento a classe task selected , ou seja, quando sua tarefa possuir a classe task selected ela estará selecionada.
+// Ao clicar novamente no elemento a sua classe deverá voltar a ser somente task , ou seja, esta tarefa está deixando de ser uma tarefa selecionada.
+
+
+function addTaskSelected (event) {
+  console.log(event.target)
+  
+  if (event.target.classList.contains('task')) {
+    event.target.classList.remove('task');
+    event.target.classList.add('task-selected');
+   } 
+   else {
+    event.target.classList.remove('task-selected')
+    event.target.classList.add('task');
+   }
+   console.log(event.target);
+  }
+
+function addEvent() {
+  const getDivTask = document.getElementsByClassName('task');
+  getDivTask[0].addEventListener('click', addTaskSelected);
+  // console.log(getDivTask);
+}
+addEvent();
   
 
 
