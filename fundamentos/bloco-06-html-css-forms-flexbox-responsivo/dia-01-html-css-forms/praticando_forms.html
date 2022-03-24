@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body>
     <h1>Tela de Login</h1>
-    
-
-
-
-
-
-</body>
+    <form action="" method="post">
+      <div>
+        <label for="email">Confirme seu e-mail</label>
+        <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required autocomplete="off" autofocus/>
+        <br /><br />
+        <label for="senha">Digite sua senha</label>
+        <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required/>
+        <br /><br />
+      </div>
+      <div>
+        <label for="checkbox=1">Internacional</label>
+        <input
+          type="checkbox"
+          name="checkbox"
+          id="checkbox-1"
+          value="internacional"
+        />
+        <br /><br />
+        <label for="checkbox=2">Grêmio</label>
+        <input type="checkbox" name="checkbox" id="checkbox-2" value="Grêmio" />
+      </div>
+      <br /><br />
+      <div>
+        <button>Entrar</button>
+      </div>
+    </form>
+  </body>
 </html>
