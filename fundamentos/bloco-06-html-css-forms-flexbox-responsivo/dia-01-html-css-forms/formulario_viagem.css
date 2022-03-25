@@ -1,34 +1,95 @@
+body {
+  color: black;
+  background-color: rgb(234, 237, 240);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
 .titulo {
-    text-align: center;
+  font-size: x-large;
+  text-align: center;
+  background-color: #106b52;
+  color: black;
+  border: 5px solid black;
 }
 
 .container-0 {
-    border: 5px solid black;
-    width: 50%;
-    height: 600px;
-    margin: 30gpx auto;
+  background-color: #106b52;
+  border: 5px solid black;
+  width: 50%;
+  height: 700px;
+  margin: 30px auto;
 }
 
+.container-1 {
+  margin: 20px;
+  width: 350px;
+}
 #nome {
-    display: block;
+  display: block;
+  width: 300px;
+  margin-bottom: 10px;
 }
 
 #email {
-    display: block;
+  display: block;
+  width: 300px;
 }
 
 .container-2 {
-    display: block;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 380px;
+}
+
+#label-resposta {
+  margin-left: 20px;
 }
 
 #resposta {
-    display: block;
+  display: block;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
+#label-data {
+  margin-left: 20px;
+  margin-right: 10px;
+}
 .container-4 {
-    display: block;
+  display: block;
+  margin-top: 30px;
+  margin-left: 20px;
 }
 
-.checkbox {
-    display: block;
+#concordo-1 {
+  margin-bottom: 10px;
+}
+
+#final {
+  text-align: center;
+}
+
+.button {
+  background-color: #106b52; /* Green */
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 15%;
+}
+
+fieldset {
+    border-color: black;
 }

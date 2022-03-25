@@ -9,46 +9,54 @@
   </head>
   <body>
     <header class="titulo">
-      <h1>Header da página</h1>
+      <h1>TrybeTrip</h1>
     </header>
     <form action="" method="post" class="formulario">
       <div class="container-0">
         <div class="container-1">
-          <label for="nome">Nome Completo</label>
-          <input type="text" id="nome" maxlength="40" minlength="10" />
-          <label for="email">E-mail</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            maxlength="50"
-            minlength="10"
-          />
+          <fieldset>
+            <legend>Dados Pessoaais</legend>
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" maxlength="40" minlength="10" />
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              maxlength="50"
+              minlength="10"
+            />
+          </fieldset>
         </div>
 
         <div class="container-2">
-          <input type="radio" name="destino" id="Cidade" />
-          <label for="">Cidade</label>
-          <input type="radio" name="destino" id="Campo" />
-          <label for="">Campo</label>
-          <input type="radio" name="destino" id="Praia" />
-          <label for="">Praia</label>
-          <input type="radio" name="destino" id="Montanha" />
-          <label for="">Montanha</label>
+          <fieldset>
+            <legend>Destino</legend>
+            <input type="radio" name="destino" id="Cidade" />
+            <label for="">Cidade</label>
+            <input type="radio" name="destino" id="Campo" />
+            <label for="">Campo</label>
+            <input type="radio" name="destino" id="Praia" />
+            <label for="">Praia</label>
+            <input type="radio" name="destino" id="Montanha" />
+            <label for="">Montanha</label>
+          </fieldset>
         </div>
         <div class="container-3">
-          <label for="resposta"
+          <label for="resposta" id="label-resposta"
             >Por que você deveria ser a pessoa desenvolvedora a ganhar o
             concurso TrybeTrip?</label
           >
           <textarea
             name="resposta"
             id="resposta"
-            cols="30"
-            rows="10"
+            cols="50"
+            rows="15"
             maxlength="500"
           ></textarea>
-          <label for="data">Qual a melhor data para realizar sua viagem?</label>
+          <label for="data" id="label-data"
+            >Qual a melhor data para realizar sua viagem?</label
+          >
           <input type="date" name="data" id="data" />
         </div>
 
@@ -74,10 +82,12 @@
         </div>
       </div>
 
-      <div>
-        <input type="submit" value="enviar" />
-        <input type="reset" value="reset" />
+      <div id="final">
+        <input class="button" type="submit" value="enviar" id="enviar" />
+        <input class="button" type="reset" value="reset" />
       </div>
     </form>
+
+    <script src="formulario_viagem.js"></script>
   </body>
 </html>
