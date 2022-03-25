@@ -1,1 +1,34 @@
+.titulo {
+    text-align: center;
+}
 
+.container-0 {
+    border: 5px solid black;
+    width: 50%;
+    height: 600px;
+    margin: 30gpx auto;
+}
+
+#nome {
+    display: block;
+}
+
+#email {
+    display: block;
+}
+
+.container-2 {
+    display: block;
+}
+
+#resposta {
+    display: block;
+}
+
+.container-4 {
+    display: block;
+}
+
+.checkbox {
+    display: block;
+}
