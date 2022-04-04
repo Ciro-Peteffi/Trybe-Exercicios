@@ -64,3 +64,41 @@ function indiceMenorNumeroArray (array) {
 
 let resultado2 = indiceMenorNumeroArray(arrayTesteMenor);
 console.log(resultado2);
+
+// 4 - Crie uma função que receba um array de nomes e retorne o nome com a maior quantidade de caracteres.
+// Array de teste: ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']; .
+// Valor esperado no retorno da função: Fernanda .
+
+let arrayTesteNomes = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
+let maiorNomeArray = arrayTesteNomes[0];
+function maiorNome (array) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].length >  maiorNomeArray.length) {
+            maiorNomeArray = array[i];
+        }       
+    }
+    return maiorNomeArray;
+}
+
+let resultado3 = maiorNome(arrayTesteNomes);
+console.log(resultado3);
+
+// 5 - Crie uma função que receba um array de inteiros e retorne o inteiro que mais se repete.
+// Array de teste: [2, 3, 2, 5, 8, 2, 3]; .
+// Valor esperado no retorno da função: 2 .
+
+let arrayInteiros = [2, 3, 2, 5, 8, 2, 3];
+let contador = 0;
+let auxiliar = 0;
+
+function numeroMaisRepete (array) {
+    for (elementos of array) {
+        contador = 0;
+        for (elementos1 of array){
+            if (elementos === elementos1) {
+                contador += 1;
+            }
+        } 
+        auxiliar = contador;
+    }
+}
