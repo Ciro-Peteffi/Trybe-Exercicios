@@ -38,6 +38,23 @@ testingScope(true);
 
 const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 
-// Seu código aqui.
+// const arrayOrdemCrescente = (array) => {
+//     for (let i = 0; i < array.length; i += 1) {
+//        for (let j = 0; j < array.length; j += 1) {
+//         if(array[i] < array[j]) {
+//             auxiliar = array[i];
+//             array[i] = array[j]
+//             array[j] = auxiliar;
+//        }    
+//        }
+//     }
+//     console.log(`Os números ${array} se encontram ordenados de forma crescente`);
+// }
 
-console.log(oddsAndEvens);  será necessário alterar essa linha 😉
+const arrayOrdemCrescente = (array) => {
+    array.sort((a, b) => a - b);
+    console.log(`Os números ${array} se encontram ordenados de forma crescente`);
+}
+
+arrayOrdemCrescente(oddsAndEvens);
+
