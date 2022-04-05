@@ -15,30 +15,35 @@
 		<button id="button">Somar</button>
 		<p id="result"></p>
 		<script>
-			  const validar = (valor1, valor2) => {
-			      if (valor1 === '' || valor2 === '') {
-			          throw new Error ('Campo inválido, digite novamente os números');
-			      }
-			  }
+			const validar = (valor1, valor2) => {
+				if (valor1 === '' || valor2 === '') {
+					throw new Error('Campo inválido, digite novamente os números');
+				} else if (isNaN(valor1) === true || isNaN(valor2) === true) {
+					throw new Error('Digite um valor numérico');
+				}
+			};
 			function sum() {
-			    try {
-			        const value1 = document.getElementById('value1').value;
-			        const value2 = document.getElementById('value2').value;
-			        validar(value1, value2);
-			        const result = parseInt(value1) + parseInt(value2);
-			        document.getElementById('result').innerHTML = `Resultado: ${result}`;
-			        document.getElementById('value1').value = '';
-			        document.getElementById('value2').value = '';
-			    } catch (error) {
-    
-                    result.innerText = error.message;
+				try {
+					const value1 = document.getElementById('value1').value;
+					const value2 = document.getElementById('value2').value;
+					validar(value1, value2);
+					const result = parseInt(value1) + parseInt(value2);
+					document.getElementById('result').innerHTML = `Resultado: ${result}`;
+					// document.getElementById('value1').value = '';
+					// document.getElementById('value2').value = '';
+				} catch (error) {
+					result.innerText = error.message;
+					// document.getElementById('value1').value = '';
+					// document.getElementById('value2').value = '';
+				} finally {
+                    document.getElementById('value1').value = '';
+					document.getElementById('value2').value = '';
                 }
-                
 			}
 			window.onload = () => {
-			  const button = document.getElementById('button');
-			  button.addEventListener('click', sum);
-			}
+				const button = document.getElementById('button');
+				button.addEventListener('click', sum);
+			};
 		</script>
 	</body>
 </html>
