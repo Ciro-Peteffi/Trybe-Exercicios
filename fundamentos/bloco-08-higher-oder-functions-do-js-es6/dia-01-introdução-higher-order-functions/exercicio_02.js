@@ -7,8 +7,6 @@ const conferirSorteio = (numero1, numero2) => {
    return 'Tente novamente';
 }
 
-
-
 const resultadoSorteio = (callback, numeroApostado) => {
     const numeroSorteado = Math.floor(Math.random()*5);
     console.log(callback(numeroApostado, numeroSorteado));
