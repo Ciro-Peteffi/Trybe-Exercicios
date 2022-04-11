@@ -67,4 +67,19 @@ encontrarNome = (booksObj, year) => {
     console.log(objResult.name);
 };
 
-encontrarNome(books, 1890)
+encontrarNome(books, 1890);
+
+// 2 - Retorne o nome do livro de menor nome.
+
+function smallerName(bookParameter) {
+    let nameBook = '';
+
+    bookParameter.forEach((value) => {
+        if (value.name.length > nameBook.length) {
+            nameBook = value.name;
+        }
+    })
+    return nameBook;
+  }
+
+  console.log(smallerName(books));
