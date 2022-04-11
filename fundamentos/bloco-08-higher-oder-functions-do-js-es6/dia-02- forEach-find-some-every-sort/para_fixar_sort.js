@@ -17,3 +17,4 @@ console.log(people);
 people.sort((a, b) => b.age - a.age);
 
 console.log(people);
+

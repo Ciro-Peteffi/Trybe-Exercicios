@@ -1,7 +1,7 @@
 const books = [
     {
       id: 1,
-      name: 'As Crônicas de Gelo e Fogo',
+      name: 'As Crônicas de Gelo e Fogoaaaa',
       genre: 'Fantasia',
       author: {
         name: 'George R. R. Martin',
@@ -60,26 +60,23 @@ const books = [
       releaseYear: 1928,
     },
   ];
+  
+  // Adicione o código do exercício aqui:
+// 3 - Encontre o primeiro livro cujo nome possui 26 caracteres.
 
-//   1 - Encontre o nome da primeira pessoa autora do livro nascida no ano de 1947.
-encontrarNome = (booksObj, year) => {
-    const objResult = Object.values(booksObj).find((values) => values.author.birthYear === year);
-    console.log(objResult.name);
-};
-
-encontrarNome(books, 1890);
-
-// 2 - Retorne o nome do livro de menor nome.
-
-function smallerName(bookParameter) {
-    let nameBook = '';
-
-    bookParameter.forEach((value) => {
-        if (value.name.length > nameBook.length) {
-            nameBook = value.name;
-        }
-    })
-    return nameBook;
+const expectedResult = {
+	author: {
+	  birthYear: 1948,
+	  name: 'George R. R. Martin',
+	},
+	genre: 'Fantasia',
+	id: 1,
+	name: 'As Crônicas de Gelo e Fogo',
+	releaseYear: 1991,
+  };
+  
+  function getNamedBook(arrayBooks) {
+	return arrayBooks.find((value) => value.name.length === 7);
   }
 
-  console.log(smallerName(books));
+  console.log(getNamedBook(books));
