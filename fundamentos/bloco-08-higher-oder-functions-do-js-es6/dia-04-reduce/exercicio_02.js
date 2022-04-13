@@ -63,13 +63,22 @@ const books = [
   
 // 2 - Crie uma string com os nomes de todas as pessoas autoras.
 
-function reduceNames() {
-    const names = books.reduce((acc, book, index, array) => {
-      if (index === array.length - 1) return `${acc} ${book.author.name}.`;
-      return `${acc} ${book.author.name},`;
-    }, '');
-    return names.trim();
-  }
+// function reduceNames() {
+//     const names = books.reduce((acc, book, index, array) => {
+//       if (index === array.length - 1) return `${acc} ${book.author.name}.`;
+//       return `${acc} ${book.author.name},`;
+//     }, '');
+//     return names.trim();
+//   }
 
-  console.log(reduceNames(books));
+//   console.log(reduceNames(books));
 
+function reduceNames(arrayBooks) {
+    const resultado = arrayBooks.reduce((acc, book) => {
+        acc += `${book.author.name}, `;  
+        return acc;
+    },''); 
+   return resultado.slice(0, -2).concat('.');
+}
+
+console.log(reduceNames(books));
