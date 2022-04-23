@@ -63,3 +63,27 @@ const books = [
   
   // 3 - Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.
 
+  const expectedResult = 43;
+
+  const somarIdades = (accSomarIdades, book) => {
+    const anoLancamentoLivro = book.releaseYear;
+    const dataNascimentoAutor = book.author.birthYear;
+    const idadeAutorLancamentoLivro = anoLancamentoLivro - dataNascimentoAutor;
+    return accSomarIdades += idadeAutorLancamentoLivro;
+    };
+
+  // function averageAge(books) {
+  //  const resultadoSomaIdadesLancamento = books.reduce((acc, book)=> {
+  //   return acc += book.releaseYear - book.author.birthYear;
+  //   }, 0);
+  //   return resultadoSomaIdadesLancamento/books.length
+  // }
+
+function averageAge(books) {
+   const resultadoSomaIdadesLancamento = books.reduce(somarIdades, 0);
+   return resultadoSomaIdadesLancamento/books.length
+  }
+
+
+
+  console.log(averageAge(books));
