@@ -6,12 +6,13 @@ const uppercase = (str, callback) => {
     }, 500);
   };
 
-  test('Não deveria passar!', (done) => {
-    setTimeout(() => {
-      expect(10).toBe(5);
-      console.log('Deveria falhar!');
-      done();
-    }, 500);
+  it('uppercase "test" to equal "TEST"', (done) => {
+    uppercase('test', (str) => {
+      try {
+        expect(str).toBe('TEST');
+        done();
+      } catch (error) {
+        done(error);
+      }
+    });
   });
-
-  
