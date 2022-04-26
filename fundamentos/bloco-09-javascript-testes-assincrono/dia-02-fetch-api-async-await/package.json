@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Ciro-Peteffi/trybe-exercicios/issues"
   },
-  "homepage": "https://github.com/Ciro-Peteffi/trybe-exercicios#readme"
+  "homepage": "https://github.com/Ciro-Peteffi/trybe-exercicios#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.3"
+  }
 }
