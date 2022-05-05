@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 const URL = `https://api.coincap.io/v2/assets`;
 
 const listCrypto = document.getElementById("crypto-list");
