@@ -1,3 +1,4 @@
+// para fixar
 import React from 'react';
 import './App.css';
 import Components from './Components';
