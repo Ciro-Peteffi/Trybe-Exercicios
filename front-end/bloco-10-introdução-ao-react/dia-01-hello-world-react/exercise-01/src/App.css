@@ -1,0 +1,7 @@
+.margin {
+  margin: 20px 0px 0px 30px;
+  text-align: center;
+  border: solid black 2px;
+  width: 250px;
+  list-style: none;
+}
