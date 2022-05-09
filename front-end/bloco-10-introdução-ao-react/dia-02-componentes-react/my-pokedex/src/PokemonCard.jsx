@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export class PokemonCard extends Component {
     render() {
@@ -15,6 +16,14 @@ export class PokemonCard extends Component {
         )
     }
 }
+
+PokemonCard.prototypes = {
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    averageWeight: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+}
+
 
 
 
