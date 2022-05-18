@@ -1,15 +1,15 @@
 // src/components/Connections.js
-import React from 'react';
+import React from "react";
 
 class Connections extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      user: '',
+      user: "",
       list: [],
       counter: 0,
-      background: '',
+      background: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -21,11 +21,22 @@ class Connections extends React.Component {
   }
 
   shouldComponentUpdate(_nextProps, { list }) {
-    // 💡 o que será que vai aqui?
+    const maxContactsNumber = 3;
+
+    return list.length <= maxContactsNumber;
+    // A quantidade de contatos não pode ser maior que 3, portanto se a lista é maior que 3, ele deverá retornar false e impedir a atualização.
   }
 
   componentDidUpdate(_prevProps, prevState) {
-    // 💡 tá meio vazio esse método, não?
+    const { list } = this.state;
+
+    if (prevState.list.length < list.length) {
+      this.changeToBlue();
+      // Ao adicionar um contato, a div ficará azul.
+    } else if (prevState.list.length > list.length) {
+      this.changeToCoral();
+      // Ao deletar um contato, a div ficará coral.
+    }
   }
 
   handleChange({ target: { value } }) {
@@ -49,7 +60,7 @@ class Connections extends React.Component {
           counter: counter + 1,
         });
       } else {
-        throw new Error('Usuário não encontrado');
+        throw new Error("Usuário não encontrado");
       }
     } catch (error) {
       console.log(error);
@@ -57,11 +68,11 @@ class Connections extends React.Component {
   }
 
   changeToBlue() {
-    this.setState({ background: 'connections-blue' });
+    this.setState({ background: "connections-blue" });
   }
 
   changeToCoral() {
-    this.setState({ background: 'connections-coral' });
+    this.setState({ background: "connections-coral" });
   }
 
   removeContact(loginToRemove) {
@@ -79,20 +90,20 @@ class Connections extends React.Component {
       <div className="counter">
         <div>
           <h5>Quantidade de contatos:</h5>
-          <span>{ counter }</span>
+          <span>{counter}</span>
         </div>
         <div className="form">
           <form className="input-group justify-content-center">
             <input
               className="form-control"
               type="text"
-              onChange={ this.handleChange }
+              onChange={this.handleChange}
               placeholder="Adicione seu contato famoso"
             />
             <button
               className="btn btn-outline-dark"
               type="button"
-              onClick={ this.handleClick }
+              onClick={this.handleClick}
             >
               Adicionar
             </button>
@@ -105,19 +116,25 @@ class Connections extends React.Component {
   contactList(list) {
     return (
       <div className="card-list d-flex flex-row justify-content-around">
-        { list.map((api) => (
-          <div className="card d-flex align-items-center" key={ api.name }>
-            <h5>{ api.name }</h5>
-            <img className="c-img" src={ api.avatar_url } alt="Avatar" width="50%" />
+        {list.map((api) => (
+          <div className="card d-flex align-items-center" key={api.name}>
+            <h5>{api.name}</h5>
+            <img
+              className="c-img"
+              src={api.avatar_url}
+              alt="Avatar"
+              width="50%"
+            />
             <button
               className="c-button btn btn-danger w-25 align-self-center"
-              data-login={ api.login }
+              data-login={api.login}
               type="button"
-              onClick={ () => this.removeContact(api.login) }
+              onClick={() => this.removeContact(api.login)}
             >
               X
             </button>
-          </div>))}
+          </div>
+        ))}
       </div>
     );
   }
@@ -126,9 +143,9 @@ class Connections extends React.Component {
     const { list, counter, background } = this.state;
 
     return (
-      <div className={ `git-connections ${background}` }>
-        { this.contactAdder(counter) }
-        { this.contactList(list) }
+      <div className={`git-connections ${background}`}>
+        {this.contactAdder(counter)}
+        {this.contactList(list)}
       </div>
     );
   }

@@ -1,18 +1,17 @@
 // src/App.js
-import React from 'react';
-import './App.css';
-import Profile from './components/Profile';
-import Connections from './components/Connections';
+import React from "react";
+import "./App.css";
+import Profile from "./components/Profile";
+import Connections from "./components/Connections";
 
 class App extends React.Component {
   constructor() {
-
-    super()
+    super();
 
     this.state = {
-      showProfile
-    }
-    
+      showProfile: true,
+    };
+    this.changeProfile = this.changeProfile.bind(this);
   }
 
   changeProfile() {
@@ -22,7 +21,22 @@ class App extends React.Component {
   }
 
   render() {
-    // 💡 está faltando algo aqui!
+    const { showProfile } = this.state;
+    return (
+      <div className="gitNetwork d-flex flex-column justify-content-center">
+        {showProfile ? <Profile /> : null}
+        <div className="central d-flex justify-content-center">
+          <button
+            className="btn btn-dark align-self-center"
+            type="button"
+            onClick={this.changeProfile}
+          >
+            Mostrar / Ocultar Perfil
+          </button>
+        </div>
+        <Connections />
+      </div>
+    );
   }
 }
 

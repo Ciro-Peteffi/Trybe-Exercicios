@@ -13,11 +13,19 @@ class Profile extends React.Component {
   }
 
   async componentDidMount() {
-    // 💡 não se esqueça de mim!
+    const myUser = "Ciro-Peteffi"; //Preencha myUser com o seu user do GitHub.
+    try {
+      const url = `https://api.github.com/users/${myUser}`;
+      const response = await fetch(url);
+      const dataJson = await response.json();
+      this.setState({ api: dataJson });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   componentWillUnmount() {
-    // 💡 eu também quero um código!
+    alert('Você ocultou seu perfil');
   }
 
   changeDataJson(dataJson) {
